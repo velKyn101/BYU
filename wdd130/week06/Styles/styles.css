@@ -1,0 +1,13 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: gray;
+}
+img{
+    background-color: white;
+}
+h1{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    text-align: center;
+}
