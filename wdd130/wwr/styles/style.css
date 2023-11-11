@@ -238,3 +238,69 @@ main section img {
         margin-top: 25px;
     }
 }
+
+.home-grid-1 {
+    margin: 15px;
+}
+
+details {
+    padding: 0.5em 0.5em 0;
+}
+details > summary {
+    color: white;
+    background-color: #7fb685;
+    cursor: pointer;
+    padding: .5rem 1rem;
+  }
+  
+  details > summary > * {
+    display: inline;
+  }
+  
+  details > div {
+    border: 2px solid #7fb685;
+    margin-top: 0;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 0.5fr;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+  }
+
+  #faq-title {
+    text-align: center;
+  }
+  details > div > img{
+    grid-column: 3/4;
+    max-width: 600px;
+    max-height: 500px;
+    justify-self: center;
+  }
+  .text-box{
+    text-align: center;
+    margin: auto auto;
+  }
+  .contact {
+    text-align: center;
+    background-color: #7fB685;
+    color: white;
+    margin-top: 100px;
+    padding: 50px;
+    max-width: 50%;
+    margin: auto auto;
+  }
+  input {
+    width: 80%;
+
+  }
+  .contactus {
+    height: 100%;
+    width: 80%;
+    padding: 50px;
+    display: block;
+    margin: 15px auto;
+}
+.contact > h3 {
+    margin: 0 0 15px;
+}
