@@ -243,6 +243,10 @@ main section img {
     margin: 15px;
 }
 
+.home-grid-1 > h2 {
+    text-align: center;
+}
+
 details {
     padding: 0.5em 0.5em 0;
 }
