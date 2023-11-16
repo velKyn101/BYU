@@ -376,7 +376,7 @@ form {
     margin-left: 0.5em;
   }
   #feedback {
-    background-color: antiquewhite;
+    background-color: rgb(230, 177, 108);
     position: absolute;
     top: 0;
     left: 0;
@@ -388,4 +388,3 @@ form {
 .moveDown {
     margin-top: 3em;
 }
-            
