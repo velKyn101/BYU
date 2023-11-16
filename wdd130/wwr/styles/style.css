@@ -383,7 +383,8 @@ form {
     right: 0;
     padding: .5em;
     /* make this element invisible until we are ready for it */
-    display: none;      
+    display: none;    
+    color: white;  
 }
 .moveDown {
     margin-top: 3em;
