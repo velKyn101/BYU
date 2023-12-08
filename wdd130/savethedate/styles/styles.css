@@ -26,6 +26,7 @@
   }
 body{
     font-family: var(--paragraph-font);
+    margin: 0 10px;
 }
 h1 {
     font-family: var(--heading-font);
@@ -94,9 +95,6 @@ nav{
     margin: 0 100px;
 }
 .paragraph{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3em;
     border: var(--nav-hover-background-color) solid;
     background-color: var(--paragraph-background-color);
     display: flex;
