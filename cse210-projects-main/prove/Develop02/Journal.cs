@@ -1,4 +1,10 @@
 using System.IO;
+
+
+//EXCEEDING REQUIREMENTS:
+//Since someone can add multiple entries in a day, I choose to keep the hour so they can keep a track of the times they add an entry and compare how the day was.
+//I added the option to save it as a CSV file as well by dividing it by quotes and them just removing them when loading it.
+
 public class Journal
 {
     public List<Entry> _entries = new List<Entry>();
@@ -29,7 +35,7 @@ public class Journal
         {   
             foreach (Entry entry in _entries)
             {
-                outputFile.WriteLine($"{entry._date}~Prompt: {entry._promptText}~{entry._entryText}~");
+                outputFile.WriteLine($"\"{entry._date}\",\"{entry._promptText}\",\"{entry._entryText}\"");
             }  
         }
     }
@@ -43,7 +49,15 @@ public class Journal
 
     foreach (string line in lines)
     {
-        string[] parts = line.Split('~');
+        string[] parts = line.Split(',');
+
+        for (int i = 0; i < parts.Length; i++)
+        {
+        if (parts[i].StartsWith("\"") && parts[i].EndsWith("\""))
+        {
+            parts[i] = parts[i].Substring(1, parts[i].Length - 2);
+        }
+        }
 
         string date = parts[0];
         string prompt = parts[1];
