@@ -113,4 +113,4 @@ const sumOfMultiplied = multiplied.reduce((acc, curr) => acc + curr, 0);
 document.getElementById('sumOfMultiplied').textContent = sumOfMultiplied;
 
 
-/* Testing*/
+/* Testing1*/
