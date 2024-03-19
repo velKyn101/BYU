@@ -65,12 +65,12 @@ function divide(number1, number2) {
 
 /* Decision Structure */
 
-document.getElementById('getTotalDue').addEventListener('click', function() {
+document.getElementById('getTotal').addEventListener('click', function() {
     // Declare and instantiate a variable to store the numeric value entered by the user in the subtotal field
     const subtotal = parseFloat(document.getElementById('subtotal').value);
   
     // Check if the membership checkbox has been checked to apply a 20% discount
-    const membershipCheckbox = document.getElementById('membership');
+    const membershipCheckbox = document.getElementById('member');
     const discount = membershipCheckbox.checked ? 0.2 : 0;
   
     // Calculate the total due after applying the discount
