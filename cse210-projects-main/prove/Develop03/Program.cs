@@ -1,18 +1,32 @@
 using System;
+using System.IO;
+
 
 public class Program
 {
-    public static void Main()
+    static void Main(string[] args)
     {
-        Reference reference = new Reference { Book = "SampleBook", Chapter = 1, Verse = 1 };
-        string scriptureText = "This is a sample scripture text for demonstration purposes";
-        Scripture scripture = new Scripture(reference, scriptureText);
-        
-        Console.WriteLine("Welcome to the Scripture Word Hiding Program!");
-        Console.WriteLine("Press Enter to hide a random number of words or type 'quit' to exit.");
-        
-        scripture.WaitAndHideWords();
-        
-        Console.WriteLine("Thank you for using the Scripture Word Hiding Program. Have a great day!");
+        // Initialize a Scripture object with the reference and text
+        var scripture = new Scripture(new Reference("John", 3, 16), "For God so loved the world...");
+
+        // Display the complete scripture
+        scripture.DisplayScripture(scripture);
+
+        // Main loop to hide words until all are hidden
+        while (!scripture.IsCompletelyHidden())
+        {
+            Console.WriteLine("\nPress Enter to continue or type 'quit' to exit:");
+            string input = Console.ReadLine();
+
+            if (input.ToLower() == "quit")
+                break;
+
+            // Hide a few random words
+            scripture.HideRandomWords(3); // Adjust the number of words to hide as needed
+
+            // Display the scripture with hidden words
+            scripture.DisplayScripture(scripture);
+        }
     }
+
 }
