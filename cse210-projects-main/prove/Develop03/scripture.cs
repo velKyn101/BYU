@@ -13,12 +13,12 @@ class Scripture
     public void HideRandomWords(int numberToHide)
     {
         Random random = new Random();
-        List<int> indices = Enumerable.Range(0, _words.Count).ToList();
+        List<int> indices = Enumerable.Range(0, _words.Count).Where(i => !_words[i].IsHidden()).ToList();
 
-        for (int i = 0; i < numberToHide; i++)
+        for (int i = 0; i < Math.Min(numberToHide, indices.Count); i++)
         {
             int index = random.Next(0, indices.Count);
-            _words[index].Hide();
+            _words[indices[index]].Hide();
             indices.RemoveAt(index);
         }
     }
@@ -31,11 +31,6 @@ class Scripture
             displayText += word.GetDisplayText() + " ";
         }
         return displayText;
-    }
-    public void DisplayScripture(Scripture scripture)
-    {
-        Console.Clear(); // This line here
-        Console.WriteLine(scripture.GetDisplayText());
     }
 
     public bool IsCompletelyHidden()
