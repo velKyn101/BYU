@@ -18,6 +18,7 @@ public class Program
         // Main loop to hide words until all are hidden
         while (!scripture.IsCompletelyHidden())
         {
+            
             Console.WriteLine("\nPress Enter to continue or type 'quit' to exit:");
             string input = Console.ReadLine();
 
@@ -27,15 +28,16 @@ public class Program
             // Hide words based on difficulty level
             scripture.HideRandomWords(wordsToHide);
 
+
             // Display the scripture with hidden words
-        DisplayScripture(scripture);
+            DisplayScripture(scripture);
         }
     }
     static void DisplayScripture(Scripture scripture)
     {
         try
         {
-        Console.Clear(); // This line here
+            Console.Clear(); // This line here
         }
         catch(System.IO.IOException)
         {
