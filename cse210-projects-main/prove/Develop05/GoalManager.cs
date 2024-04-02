@@ -56,7 +56,7 @@ public class GoalManager
         Console.WriteLine("Eternal Quest - Goal Manager");
         foreach (var goal in _goals)
         {
-            _score += goal._points;
+            _score += goal.GetPoints();
         }
         Console.WriteLine($"Your score: {_score}");
         Console.WriteLine("Your goals: ");
@@ -125,7 +125,8 @@ public class GoalManager
         Console.WriteLine("Select goal to record event:");
         for (int i = 0; i < _goals.Count; i++)
         {
-            Console.WriteLine($"{i + 1}. {_goals[i]._name}");
+            string name = _goals[i].GetName();
+            Console.WriteLine($"{i + 1}. {name}");
         }
         Console.Write("Enter your choice: ");
         int choice = int.Parse(Console.ReadLine());
@@ -189,7 +190,7 @@ public class GoalManager
         Console.WriteLine("List of Goal Names:");
         foreach (var goal in _goals)
         {
-            Console.WriteLine(goal._name);
+            Console.WriteLine(goal.GetName());
         }
     }
 
